@@ -27,7 +27,7 @@
 					console.log("5 - response received");
 					result = request.responseText;
 					numcases = JSON.parse(result);
-					input = "<h2> Date: " + cases[0]["date"] + "</br> </h2>";
+					input = "<h2> Date: " + numcases[0]["date"] + "</br> </h2>";
 					numcases.forEach(function(state) {
 						input += "<h3> State: " + state["state"] + "</br>"
 						+ "Number of Positive Cases: " + state["positive"] +
