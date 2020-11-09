@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Covid Dashboard</title>
+	<title>Weather API</title>
 	<meta charset="utf-8"/>
 	<script>
 		function getCovid() {
@@ -27,7 +27,7 @@
 					console.log("5 - response received");
 					result = request.responseText;
 					numcases = JSON.parse(result);
-					input = "<h2> Date: " + numcases[0]["date"] + "</br> </h2>";
+					input = "<h2> Date of results: " + numcases[0]["date"] + "</br> </h2>";
 					numcases.forEach(function(state) {
 						input += "<h3> State: " + state["state"] + "</br>"
 						+ "Number of Positive Cases: " + state["positive"] +
@@ -59,6 +59,16 @@
 <body onload="getCovid()">
 
 	<h1>Covid Dashboard</h1>
+	<div> Content for assignment at bottom of page </div>
 	<div id="data">Loading...</div>
+	<ul>
+		<li> Data found on : https://api.covidtracking.com/v1/states/current.json
+		<li> This API tracks all COVID-19 Testing and Cases in America
+		<li> Used the "GET" option to retrieve data
+			<li> This API would be useful for: <ul>
+				<li> Comparing Covid infection rates on campus to national rates
+					<li> Seeing how states who voted a certain way are influenced by COVID compared to others
+			</ul>
+	</ul>
 </body>
 </html>
